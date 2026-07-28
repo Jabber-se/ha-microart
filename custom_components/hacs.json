@@ -2,7 +2,7 @@
   "name": "MicroArt Malina Integration",
   "type": "integration",
   "render_readme": true,
-  "country": ["RU"],
+  "country": "RU",
   "homeassistant": "2026.1.0",
   "manifest": "custom_components/microart/manifest.json"
 }
