@@ -1,7 +1,0 @@
-{
-  "name": "MicroArt Malina Integration",
-  "type": "integration",
-  "render_readme": true,
-  "country": "RU",
-  "homeassistant": "2026.1.0"
-}
