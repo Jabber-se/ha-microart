@@ -1,6 +1,7 @@
 {
   "domain": "microart",
   "name": "MicroArt",
+  "iot_class": "local_polling",
   "documentation": "https://github.com/Jabber-se/ha-microart/blob/main/README.md",
   "issue_tracker": "https://github.com/Jabber-se/ha-microart/issues",
   "config_flow": true,
