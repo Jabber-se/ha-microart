@@ -1,5 +1,26 @@
-# ha-microart
 # Интеграция ПАК Малина-2 (МикроАрт) для Home Assistant
+
+[![hacs_badge](https://shields.io)](https://github.com)
+[![License: MIT](https://shields.io)](https://opensource.org)
+
+*Read this in other languages: [English](#english), [Русский](#русский).*
+
+---
+
+## English
+
+Home Assistant custom integration for monitoring and controlling **MicroArt** power systems (MAP Inverters, KЭС MPPT PRO solar controllers, Battery Monitors) via **Malina-2** gateway (Debian-based system).
+
+### Features:
+- Two-step Config Flow with automatic hardware discovery (`devices.php`).
+- Dedicated Device Registry entries for Gateway, Inverter, Battery Monitor, and individual MPPTs.
+- High-speed async MPPT relay switches via USB-RS485 bridge with 5-second UI feedback lock.
+- Dynamic scan interval updates on the fly (30, 60, 90, 120 seconds).
+- Native state translation for Home Assistant UI.
+
+---
+
+## Русский
 
 Интеграция для мониторинга и управления оборудованием компании **МикроАрт** (Инверторы МАП Энергия, КЭС MPPT PRO) через ПАК Малина-2.
 
@@ -39,3 +60,6 @@
 - **Динамическое изменение `Uminэко`**: Добавление ползунков (`number` / `input_number`) для удаленного изменения порога минимального напряжения эко-режима прямо из интерфейса Home Assistant (для защиты аккумуляторов или настройки глубины их циклического разряда).
 - **Оптимизация солнечной системы**: Создание готовых сценариев автоматизации для автоматического переключения режимов работы МАП на основе баланса генерации PV-панелей, текущей нагрузки и доступной емкости АКБ - полноценная Energy Storage System.
 
+## 📄 Лицензия
+
+Этот проект распространяется под свободной лицензией **MIT**. Вы можете свободно использовать, модифицировать и распространять данный код. Автор не несет ответственности за любые последствия использования данного программного обеспечения (предоставляется "как есть").
