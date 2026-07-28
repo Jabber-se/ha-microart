@@ -12,9 +12,9 @@
 Home Assistant custom integration for monitoring and controlling **MicroArt** power systems (MAP Inverters, KЭС MPPT PRO solar controllers, Battery Monitors) via **Malina-2** gateway (Debian-based system).
 
 ### Features:
-- Two-step Config Flow with automatic hardware discovery (`devices.php`).
+- Two-step Config Flow with automatic hardware discovery.
 - Dedicated Device Registry entries for Gateway, Inverter, Battery Monitor, and individual MPPTs.
-- High-speed async MPPT relay switches via USB-RS485 bridge with 5-second UI feedback lock.
+- MPPT controller's relay switches.
 - Dynamic scan interval updates on the fly (30, 60, 90, 120 seconds).
 - Native state translation for Home Assistant UI.
 
