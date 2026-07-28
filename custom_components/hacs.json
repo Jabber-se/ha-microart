@@ -3,5 +3,6 @@
   "type": "integration",
   "render_readme": true,
   "country": ["RU"],
-  "homeassistant": "2026.1.0"
+  "homeassistant": "2026.1.0",
+  "manifest": "custom_components/microart/manifest.json"
 }
