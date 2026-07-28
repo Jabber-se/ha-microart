@@ -1,0 +1,155 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Step 1: Connect to PAC Malina-2",
+        "description": "Enter the IP address of your Malina. The system will automatically check the connection and discover connected devices.",
+        "data": {
+          "ip_address": "Malina Server IP Address",
+          "name": "Sensor Name Prefix (e.g., MAP)"
+        }
+      },
+      "devices": {
+        "title": "Step 2: Discovered Equipment",
+        "description": "The system successfully discovered devices. You can adjust them if necessary.",
+        "data": {
+          "scan_interval": "Malina Scan Interval",
+          "battery": "Battery Monitor",
+          "mppt1": "MPPT 1 Controller",
+          "mppt2": "MPPT 2 Controller",
+          "mppt3": "MPPT 3 Controller",
+          "mppt4": "MPPT 4 Controller"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to Malina. Check the IP address or network availability of the server."
+    },
+    "abort": {
+      "already_configured": "This Malina server is already configured. To change parameters, use the CONFIGURE button on the integration card."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Change Malina Settings",
+        "description": "Here you can change the scan interval or the composition of connected equipment on the fly.",
+        "data": {
+          "scan_interval": "Malina Scan Interval",
+          "battery": "Battery Monitor",
+          "mppt1": "MPPT 1 Controller",
+          "mppt2": "MPPT 2 Controller",
+          "mppt3": "MPPT 3 Controller",
+          "mppt4": "MPPT 4 Controller"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "grid_ac_power": { "name": "Grid Power" },
+      "grid_ac_current": { "name": "Grid Current" },
+      "grid_ac_voltage": { "name": "Grid Voltage" },
+      "grid_ac_frequency": { "name": "Grid Frequency" },
+      "load_ac_voltage": { "name": "Load Voltage" },
+      "load_ac_power": { "name": "Load Power" },
+      "load_ac_current": { "name": "Load Current" },
+      "load_ac_frequency": { "name": "Load Frequency" },
+      "dc_current": { "name": "DC Current" },
+      "dc_voltage": { "name": "DC Voltage" },
+      "dc_power": { "name": "DC Power" },
+      "map_bat_temp": { "name": "Battery Temperature" },
+      "map_mode": { 
+        "name": "Mode",
+        "state": {
+          "off_no_grid": "Off, No Grid",
+          "off_grid_connected": "Off, Grid Connected",
+          "on_inverting": "On, Inverting (Battery)",
+          "on_pass_through": "On, Pass-through",
+          "on_charge": "On, Pass-through & Charge",
+          "forced_inverting": "Forced Inverting",
+          "peak_tariff": "Peak Tariff, Forced Inverting",
+          "off_peak_tariff": "Off-peak Tariff",
+          "solar_assist": "Pass-through & Solar Assist",
+          "feed_in": "Pass-through & Feed-in",
+          "standby": "Standby, Charging Disabled",
+          "scheduled_solar_assist": "Peak Tariff Solar Assist",
+          "scheduled_feed_in": "Peak Tariff Feed-in",
+          "power_assist_pmax": "Grid Power Limit (PowerAssist)"
+        }
+      },
+      "map_charger_mode": { 
+        "name": "Charger Mode",
+        "state": {
+          "no_charging": "No Charging",
+          "stage_1": "Charge Required (Stage 1)",
+          "stage_2": "Absorption (Stage 2)",
+          "float_charging": "Float Charging"
+        }
+      },
+      "map_grid_energy": { "name": "Grid Energy" },
+      "map_grid_sum_energy": { "name": "Grid Sum Energy" },
+	  "map_grid_export_energy": { "name": "Grid Export Energy" },
+      "map_discharge_energy": { "name": "Inverter Discharge Energy" },
+      "map_charge_energy": { "name": "Inverter Charge Energy" },
+      "bat_C_Ah_remain": { "name": "Battery Remain Ah" },
+      "bat_C_100_remain": { "name": "SOC" },
+      "bat_TTG": { "name": "TTG" },
+      "bat_current": { "name": "Battery Current" },
+      "bat_voltage": { "name": "Battery Voltage" },
+      "bat_discharge_energy_day": { "name": "Day Battery Discharge Energy" },
+      "bat_charge_energy_day": { "name": "Day Battery Charge Energy" },
+      "mppt_charge_energy_day": { "name": "Day MPPT Energy" },
+      "mppt1_pv_power": { "name": "MPPT PV Power" },
+      "mppt1_pv_voltage": { "name": "MPPT PV Voltage" },
+      "mppt1_pv_current": { "name": "MPPT PV Current" },
+      "mppt1_power": { "name": "MPPT Power" },
+      "mppt1_voltage": { "name": "MPPT Voltage" },
+      "mppt1_current": { "name": "MPPT Current" },
+      "mppt1_relay1_status": { "name": "MPPT Relay 1 Status" },
+      "mppt1_relay2_status": { "name": "MPPT Relay 2 Status" },
+      "mppt1_relay3_status": { "name": "MPPT Relay 3 Status" },
+      "mppt2_pv_power": { "name": "MPPT PV Power" },
+      "mppt2_pv_voltage": { "name": "MPPT PV Voltage" },
+      "mppt2_pv_current": { "name": "MPPT PV Current" },
+      "mppt2_power": { "name": "MPPT Power" },
+      "mppt2_voltage": { "name": "MPPT Voltage" },
+      "mppt2_current": { "name": "MPPT Current" },
+      "mppt2_relay1_status": { "name": "MPPT Relay 1 Status" },
+      "mppt2_relay2_status": { "name": "MPPT Relay 2 Status" },
+      "mppt2_relay3_status": { "name": "MPPT Relay 3 Status" },
+      "mppt3_pv_power": { "name": "MPPT PV Power" },
+      "mppt3_pv_voltage": { "name": "MPPT PV Voltage" },
+      "mppt3_pv_current": { "name": "MPPT PV Current" },
+      "mppt3_power": { "name": "MPPT Power" },
+      "mppt3_voltage": { "name": "MPPT Voltage" },
+      "mppt3_current": { "name": "MPPT Current" },
+      "mppt3_relay1_status": { "name": "MPPT Relay 1 Status" },
+      "mppt3_relay2_status": { "name": "MPPT Relay 2 Status" },
+      "mppt3_relay3_status": { "name": "MPPT Relay 3 Status" },
+      "mppt4_pv_power": { "name": "MPPT PV Power" },
+      "mppt4_pv_voltage": { "name": "MPPT PV Voltage" },
+      "mppt4_pv_current": { "name": "MPPT PV Current" },
+      "mppt4_power": { "name": "MPPT Power" },
+      "mppt4_voltage": { "name": "MPPT Voltage" },
+      "mppt4_current": { "name": "MPPT Current" },
+      "mppt4_relay1_status": { "name": "MPPT Relay 1 Status" },
+      "mppt4_relay2_status": { "name": "MPPT Relay 2 Status" },
+      "mppt4_relay3_status": { "name": "MPPT Relay 3 Status" }
+    },
+    "switch": {
+      "mppt1_relay1_status_switch": { "name": "Relay 1" },
+      "mppt1_relay2_status_switch": { "name": "Relay 2" },
+      "mppt1_relay3_status_switch": { "name": "Relay 3" },
+      "mppt2_relay1_status_switch": { "name": "Relay 1" },
+      "mppt2_relay2_status_switch": { "name": "Relay 2" },
+      "mppt2_relay3_status_switch": { "name": "Relay 3" },
+      "mppt3_relay1_status_switch": { "name": "Relay 1" },
+      "mppt3_relay2_status_switch": { "name": "Relay 2" },
+      "mppt3_relay3_status_switch": { "name": "Relay 3" },
+      "mppt4_relay1_status_switch": { "name": "Relay 1" },
+      "mppt4_relay2_status_switch": { "name": "Relay 2" },
+      "mppt4_relay3_status_switch": { "name": "Relay 3" }
+    }
+  }
+}

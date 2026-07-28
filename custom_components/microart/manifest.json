@@ -1,0 +1,11 @@
+{
+  "domain": "microart",
+  "name": "MicroArt",
+  "documentation": "https://github.com/Jabber-se/ha-microart/blob/main/README.md",
+  "config_flow": true,
+  "dependencies": [],
+  "codeowners": ["Jabber-se"],
+  "requirements": [],
+  "version": "v0.2.0"
+}
+

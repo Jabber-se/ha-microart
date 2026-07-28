@@ -1,0 +1,155 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Шаг 1: Подключение к ПАК Малина-2",
+        "description": "Введите IP-адрес вашей Малины. Система автоматически проверит связь и определит состав подключенного оборудования.",
+        "data": {
+          "ip_address": "IP-адрес сервера Малина",
+          "name": "Префикс имен сенсоров (например, MAP)"
+        }
+      },
+      "devices": {
+        "title": "Шаг 2: Обнаруженное оборудование",
+        "description": "Система успешно обнаружила устройства. Вы можете скорректировать их при необходимости.",
+        "data": {
+          "scan_interval": "Период опроса Малины",
+          "battery": "Монитор АКБ",
+          "mppt1": "Контроллер MPPT 1",
+          "mppt2": "Контроллер MPPT 2",
+          "mppt3": "Контроллер MPPT 3",
+          "mppt4": "Контроллер MPPT 4"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Не удалось подключиться к Малине. Проверьте IP-адрес или доступность сервера по сети."
+    },
+    "abort": {
+      "already_configured": "Этот сервер Малина уже настроен. Для изменения параметров используйте кнопку «НАСТРОИТЬ» на карточке интеграции."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Изменение настроек Малины",
+        "description": "Здесь вы можете изменить период опроса или состав подключенного оборудования.",
+        "data": {
+          "scan_interval": "Период опроса Малины",
+          "battery": "Монитор АКБ",
+          "mppt1": "Контроллер MPPT 1",
+          "mppt2": "Контроллер MPPT 2",
+          "mppt3": "Контроллер MPPT 3",
+          "mppt4": "Контроллер MPPT 4"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "grid_ac_power": { "name": "Мощность сети" },
+      "grid_ac_current": { "name": "Ток сети" },
+      "grid_ac_voltage": { "name": "Напряжение сети" },
+      "grid_ac_frequency": { "name": "Частота сети" },
+      "load_ac_voltage": { "name": "Напряжение нагрузки" },
+      "load_ac_power": { "name": "Мощность нагрузки" },
+      "load_ac_current": { "name": "Ток нагрузки" },
+      "load_ac_frequency": { "name": "Частота нагрузки" },
+      "dc_current": { "name": "Ток инвертора DC" },
+      "dc_voltage": { "name": "Напряжение инвертора DC" },
+      "dc_power": { "name": "Мощность инвертора DC" },
+      "map_bat_temp": { "name": "Температура АКБ (МАП)" },
+      "map_mode": { 
+        "name": "Режим работы МАП",
+        "state": {
+          "off_no_grid": "Выключен, Сеть отсутствует",
+          "off_grid_connected": "Выключен, Сеть подключена",
+          "on_inverting": "Включен, Генерация от АКБ",
+          "on_pass_through": "Включен, Трназит сети",
+          "on_charge": "Включен, Транзит и Заряд АКБ",
+          "forced_inverting": "Принудительная генерация",
+          "peak_tariff": "Тариф День, Принудительная генерация",
+          "off_peak_tariff": "Тариф Ночь",
+          "solar_assist": "Транзит сети и Эко-режим (Добавление солнца)",
+          "feed_in": "Транзит сети и Продажа в сеть",
+          "standby": "Ожидание Заряда",
+          "scheduled_solar_assist": "Тариф День, Эко-режим",
+          "scheduled_feed_in": "Тариф День, Продажа в сеть",
+          "power_assist_pmax": "Ограничение мощности сети (PowerAssist)"
+        }
+      },
+      "map_charger_mode": { 
+        "name": "Статус зарядного устройства",
+        "state": {
+          "no_charging": "Заряд отсутствует",
+          "stage_1": "Требуется Заряд (Стадия 1)",
+          "stage_2": "Наполнение (Стадия 2)",
+          "float_charging": "Поддержание (Буферный режим)"
+        }
+      },
+      "map_grid_energy": { "name": "Потребленная энергия сети" },
+      "map_grid_sum_energy": { "name": "Суммарная энергия сети" },
+	  "map_grid_export_energy": { "name": "Экспортированная энергия в сеть" },
+      "map_discharge_energy": { "name": "Энергия разряда АКБ" },
+      "map_charge_energy": { "name": "Энергия заряда АКБ" },
+      "bat_C_Ah_remain": { "name": "Остаточный заряд АКБ" },
+      "bat_C_100_remain": { "name": "Уровень заряда АКБ (SOC)" },
+      "bat_TTG": { "name": "Время до разряда АКБ (TTG)" },
+      "bat_current": { "name": "Ток АКБ" },
+      "bat_voltage": { "name": "Напряжение АКБ" },
+      "bat_discharge_energy_day": { "name": "Разряд АКБ за день" },
+      "bat_charge_energy_day": { "name": "Заряд АКБ за день" },
+      "mppt_charge_energy_day": { "name": "Выработка MPPT за день" },
+      "mppt1_pv_power": { "name": "Мощность PV" },
+      "mppt1_pv_voltage": { "name": "Напряжение PV" },
+      "mppt1_pv_current": { "name": "Ток PV" },
+      "mppt1_power": { "name": "Мощность на выходе" },
+      "mppt1_voltage": { "name": "Напряжение на выходе" },
+      "mppt1_current": { "name": "Ток заряда" },
+      "mppt1_relay1_status": { "name": "Статус реле 1" },
+      "mppt1_relay2_status": { "name": "Статус реле 2" },
+      "mppt1_relay3_status": { "name": "Статус реле 3" },
+      "mppt2_pv_power": { "name": "Мощность PV" },
+      "mppt2_pv_voltage": { "name": "Напряжение PV" },
+      "mppt2_pv_current": { "name": "Ток PV" },
+      "mppt2_power": { "name": "Мощность на выходе" },
+      "mppt2_voltage": { "name": "Напряжение на выходе" },
+      "mppt2_current": { "name": "Ток заряда" },
+      "mppt2_relay1_status": { "name": "Статус реле 1" },
+      "mppt2_relay2_status": { "name": "Статус реле 2" },
+      "mppt2_relay3_status": { "name": "Статус реле 3" },
+      "mppt3_pv_power": { "name": "Мощность PV" },
+      "mppt3_pv_voltage": { "name": "Напряжение PV" },
+      "mppt3_pv_current": { "name": "Ток PV" },
+      "mppt3_power": { "name": "Мощность на выходе" },
+      "mppt3_voltage": { "name": "Напряжение на выходе" },
+      "mppt3_current": { "name": "Ток заряда" },
+      "mppt3_relay1_status": { "name": "Статус реле 1" },
+      "mppt3_relay2_status": { "name": "Статус реле 2" },
+      "mppt3_relay3_status": { "name": "Статус реле 3" },
+      "mppt4_pv_power": { "name": "Мощность PV" },
+      "mppt4_pv_voltage": { "name": "Напряжение PV" },
+      "mppt4_pv_current": { "name": "Ток PV" },
+      "mppt4_power": { "name": "Мощность на выходе" },
+      "mppt4_voltage": { "name": "Напряжение на выходе" },
+      "mppt4_current": { "name": "Ток заряда" },
+      "mppt4_relay1_status": { "name": "Статус реле 1" },
+      "mppt4_relay2_status": { "name": "Статус реле 2" },
+      "mppt4_relay3_status": { "name": "Статус реле 3" }
+    },
+    "switch": {
+      "mppt1_relay1_status_switch": { "name": "Реле 1" },
+      "mppt1_relay2_status_switch": { "name": "Реле 2" },
+      "mppt1_relay3_status_switch": { "name": "Реле 3" },
+      "mppt2_relay1_status_switch": { "name": "Реле 1" },
+      "mppt2_relay2_status_switch": { "name": "Реле 2" },
+      "mppt2_relay3_status_switch": { "name": "Реле 3" },
+      "mppt3_relay1_status_switch": { "name": "Реле 1" },
+      "mppt3_relay2_status_switch": { "name": "Реле 2" },
+      "mppt3_relay3_status_switch": { "name": "Реле 3" },
+      "mppt4_relay1_status_switch": { "name": "Реле 1" },
+      "mppt4_relay2_status_switch": { "name": "Реле 2" },
+      "mppt4_relay3_status_switch": { "name": "Реле 3" }
+    }
+  }
+}
