@@ -9,12 +9,12 @@
 
 ## English
 
-Home Assistant custom integration for monitoring and controlling **MicroArt** power systems (MAP Inverters, KЭС MPPT PRO solar controllers, Battery Monitors) via **Malina-2** gateway (Debian-based system).
+Home Assistant custom integration for monitoring and controlling **MicroArt** power systems (MAP Inverters, KЭС MPPT PRO solar charger, Battery Monitors) via **Malina-2** gateway (Debian-based system).
 
 ### Features:
 - Two-step Config Flow with automatic hardware discovery.
-- Dedicated Device Registry entries for Gateway, Inverter, Battery Monitor, and individual MPPTs.
-- MPPT controller's relay switches.
+- Dedicated Device Registry entries for Gateway, Inverter, Battery Monitor, and individual MPPT solar chargers.
+- MPPT solar charger's relay switches.
 - Dynamic scan interval updates on the fly (30, 60, 90, 120 seconds).
 - Native state translation for Home Assistant UI.
 
@@ -32,7 +32,7 @@ Home Assistant custom integration for monitoring and controlling **MicroArt** po
 ## ✨ Основные возможности
 - **Двухэтапный Config Flow**: Автоматическое сканирование. Система сама определит количество подключенных MPPT и выберет Монитор АКБ.
 - **Device Registry**: Полная группировка сущностей. Вместо хаотичного списка датчиков вы получаете красивые раздельные карточки устройств: *ПАК Малина*, *Инвертор МАП*, *Монитор АКБ*, *Контроллер MPPT*.
-- **Управление реле**: Быстрое переключение встроенных реле КЭС MPPT PRO и блокировкой ложной обратной связи.
+- **Управление реле**: Быстрое переключение встроенных реле КЭС MPPT PRO с блокировкой ложной обратной связи.
 - **Полная локализация**: Поддержка русского и английского языков (в процессе разработки).
 
 ## 🚀 Установка через HACS
@@ -41,7 +41,7 @@ Home Assistant custom integration for monitoring and controlling **MicroArt** po
 2. Перейдите в **HACS** -> **Интеграции** (Integrations).
 3. В правом верхнем углу нажмите три точки и выберите **Пользовательские репозитории** (Custom repositories).
 4. Вставьте ссылку на этот репозиторий ( https://github.com/Jabber-se/ha-microart ), в поле «Категория» выберите **Интеграция** (Integration) и нажмите **Добавить**.
-5. Найдите в поиске **MicroArt**, нажмите **Скачать** и перезагрузите Home Assistant.
+5. Найдите в поиске **MicroArt**, нажмите **Скачать** и после установки перезагрузите Home Assistant.
 
 ## 🛠️ Настройка интеграции
 
@@ -58,7 +58,7 @@ Home Assistant custom integration for monitoring and controlling **MicroArt** po
 - **Управление принудительной генерацией**: Реализация переключателей (`switch`) для принудительного перевода инвертора на питание от аккумуляторов и солнца, минуя промышленную сеть (например, во время действия дорогих пиковых тарифов).
 - **Управление зарядным устройством**: Интеграция команд для гибкого включения, отключения или ограничения токов заряда инвертора в зависимости от текущего прогноза солнечной генерации или ночных тарифов.
 - **Динамическое изменение `Uminэко`**: Добавление ползунков (`number` / `input_number`) для удаленного изменения порога минимального напряжения эко-режима прямо из интерфейса Home Assistant (для защиты аккумуляторов или настройки глубины их циклического разряда).
-- **Оптимизация солнечной системы**: Создание готовых сценариев автоматизации для автоматического переключения режимов работы МАП на основе баланса генерации PV-панелей, текущей нагрузки и доступной емкости АКБ - полноценная Energy Storage System.
+- **Оптимизация солнечной системы**: Создание готовых сценариев автоматизации для автоматического переключения режимов работы МАП на основе баланса генерации PV-панелей, текущей нагрузки и доступной для разряда емкости АКБ - полноценная Energy Storage System.
 
 ## 📄 Лицензия
 
