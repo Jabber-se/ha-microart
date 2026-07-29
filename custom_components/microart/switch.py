@@ -179,20 +179,32 @@ class MicroArtRelaySwitch(SwitchEntity):
         self.async_write_ha_state()
 
     async def _async_lock_timer(self, delay: int):
-        """Асинно спит delay секунд, после чего возвращает управление сети."""
+        """Асинхронно ждет delay секунд, обновляет данные и отпускает интерфейс."""
         try:
+            # 1. Спим наши 5 секунд, пока Малина щелкает реле и обновляет файлы
             await asyncio.sleep(delay)
-            self._lock_feedback = False
-            _LOGGER.debug("Таймер удержания реле истек, возвращаемся к чтению JSON")
+            _LOGGER.debug("Таймер удержания истек. Сначала запрашиваем свежий JSON...")
             
-            # По истечении 10 секунд принудительно обновляем фетчер сети, 
-            # так как Малина уже гарантированно успела записать новые статусы в JSON
+            # 2. СНАЧАЛА принудительно обновляем данные из сети (жёстко дожидаемся ответа через await!)
             if self._fetcher:
-                self.hass.async_create_task(self._fetcher.async_update())
+                await self._fetcher.async_update()
                 
+            # 3. ТОЛЬКО ТЕПЕРЬ, когда в кэше фетчера гарантированно свежий статус,
+            # отключаем блокировку интерфейса
+            self._lock_feedback = False
+            _LOGGER.debug("Блокировка снята, данные синхронизированы с Малиной")
+            
+            # 4. Сообщаем Home Assistant, что состояние изменилось
             self.async_write_ha_state()
+            
         except asyncio.CancelledError:
-            pass
+            _LOGGER.debug("Таймер удержания реле был прерван новой командой")
+        except Exception as err:
+            _LOGGER.error("Ошибка в таймере удержания реле: %s", err)
+            # На случай непредвиденной ошибки сети в самом таймере — 
+            # все равно отпускаем замок, чтобы интерфейс не завис навсегда
+            self._lock_feedback = False
+            self.async_write_ha_state()
 
     async def _send_command(self, url) -> bool:
         """Отправка HTTP-команды на Малину с проверкой 'ok'."""
