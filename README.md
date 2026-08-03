@@ -44,7 +44,7 @@ Home Assistant custom integration for monitoring and controlling **MicroArt** po
 
 ## 🛠️ Ручная установка
 
-1. Перейдите на страницу **[Релизы (Releases)](https://github.com](https://github.com/Jabber-se/ha-microart/releases)** и скачайте архив последнего стабильного релиза.
+1. Перейдите на страницу [Релизы (Releases)](https://github.com/Jabber-se/ha-microart/releases) и скачайте архив последнего стабильного релиза.
 2. Распакуйте архив на своем компьютере.
 3. Скопируйте папку **`microart`** (из папки `custom_components`) в директорию вашего сервера Home Assistant:  
    `config/custom_components/`  
