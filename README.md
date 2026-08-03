@@ -1,7 +1,7 @@
 # Интеграция ПАК Малина-2 (МикроАрт) для Home Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
-[![hacs_badge](https://img.shields.io/badge/mit-license-blue)](https://opensource.org/licenses/MIT)
+[![hacs_badge](https://img.shields.io/badge/MIT-license-blue)](https://opensource.org/licenses/MIT)
 
 *Read this in other languages: [English](#english), [Русский](#русский).*
 
