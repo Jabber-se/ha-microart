@@ -39,11 +39,18 @@ Home Assistant custom integration for monitoring and controlling **MicroArt** po
 
 1. Убедитесь, что у вас установлен [HACS](https://hacs.xyz).
 2. Перейдите в **HACS** -> **Интеграции** (Integrations).
-3. В правом верхнем углу нажмите три точки и выберите **Пользовательские репозитории** (Custom repositories).
-4. Вставьте ссылку на этот репозиторий ( https://github.com/Jabber-se/ha-microart ), в поле «Категория» выберите **Интеграция** (Integration) и нажмите **Добавить**.
-5. Найдите в поиске **MicroArt**, нажмите **Скачать** и после установки перезагрузите Home Assistant.
+3. Найдите в поиске **MicroArt**, откройте интеграцию, нажмите **Скачать**
+4. Перезагрузите Home Assistant.
 
-## 🛠️ Настройка интеграции
+## 🛠️ Ручная установка
+
+1. Перейдите на страницу **[Релизы (Releases)]([https://github.com](https://github.com/Jabber-se/ha-microart/releases))** и скачайте архив последнего стабильного релиза.
+2. Распакуйте архив на своем компьютере.
+3. Скопируйте папку **`microart`** (из папки `custom_components`) в директорию вашего сервера Home Assistant:  
+   `config/custom_components/`  
+4. Перезагрузите Home Assistant.
+
+## ⚙️ Настройка интеграции
 
 1. Перейдите в **Настройки** -> **Устройства и службы** -> **Добавить интеграцию**.
 2. Найдите **MicroArt**.
